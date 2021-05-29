@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+    <title>Spam Checker</title>
+
+    <style>
+        #marquee{
+            left: 0;
+            top: 0;
+            width: 100%;
+            background-color:black;
+            height: 60px;
+            text-align: center;
+            position:fixed;
+            
+        }
+        #marquee p{
+            text-align: center;
+            font-weight: bold;
+            
+        }
+        /* #01FF70 */
+        body 
+        {
+            background-color:whitesmoke;  
+            text-align: center;
+            padding: 0px;
+        }
+        
+        form
+        {
+            width: 500px;
+            padding: 20px;
+            margin: auto;
+            background-color: #001f3f;
+            font-size: 20px;
+        }
+        textarea{
+            background-color: #f2f2f2;
+            width: 500px;
+            font-size: 20px;
+            margin: auto;
+        }
+        
+        #sub:hover {
+            background-color: lawngreen;
+        }
+        #sub
+        {
+            border-radius: 14px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            width: 25%;
+        }
+        
+        /* Footer */
+
+        .footer{
+            background-color:black;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+
+        }
+
+        .contact-icon{
+            color: white;
+            padding: 7px;
+        }
+
+        .contact-icon:hover{
+            color: whitesmoke;
+        }
+        .footer-description{
+            margin: 0;
+            font-size: 12px;
+            font-weight: 100;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div style="color:yellow">
+        <div id="marquee">
+            <marquee width="100%" direction="right" height="40px">
+                <p> ********* WELCOME TO SPAM CHECKER WEBSITE **********</p>
+            </marquee>
+        </div>
+          <br>
+          <br>  
+          <br>
+        <form action="{{ url_for('predict') }}" method="post">
+            <textarea name="message" id="" cols="30" rows="15" placeholder="Enter Your Message!!"></textarea>
+            <br><br>
+            <button id="sub" type="submit ">Click Me!!</button>
+            <br>
+        </form>
+        <h3 style="color: red;">{{ prediction_text }}<h3>
+        
+        <div class='footer'>
+                <div class="contact">
+                    <a target="_blank" href="https://github.com/DhirajGupta141"><i class="fab fa-github fa-lg contact-icon"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/in/dhirajgupta141"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+                </div>
+                <p class='footer-description'>Made with ❤️ by Dhiraj Gupta.</p>
+        </div>
+    </div>
+
+</body>
+</html>
